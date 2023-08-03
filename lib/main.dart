@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
-mixin CanRun {
+mixin CanRun on Animal {
   int get speed;
 
   void run() {
@@ -46,7 +46,11 @@ mixin CanRun {
   }
 }
 
-class Cat with CanRun {
+class Cat extends Animal with CanRun {
   @override
   int speed = 10;
+}
+
+abstract class Animal {
+  const Animal();
 }
